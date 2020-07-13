@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\VMS.Models\VMS.Models.csproj" />
     <ProjectReference Include="..\VMS.Utility\VMS.Utility.csproj" />
   </ItemGroup>
