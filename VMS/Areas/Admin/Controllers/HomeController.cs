@@ -5,7 +5,7 @@ using VMS.Models.ViewModels;
 
 namespace VMS.Areas.Admin.Controllers
 {
-    [Area("Admin")] 
+    [Area("Admin")] //Only Admin functions in this application.
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

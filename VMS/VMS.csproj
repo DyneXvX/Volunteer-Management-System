@@ -20,9 +20,4 @@
     <ProjectReference Include="..\VMS.Utility\VMS.Utility.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Views\" />
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
