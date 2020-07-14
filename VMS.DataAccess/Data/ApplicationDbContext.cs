@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using VMS.Models;
 
 namespace VMS.Data
 {
@@ -12,5 +13,7 @@ namespace VMS.Data
             : base(options)
         {
         }
+
+        public DbSet<Volunteer> Volunteers { get; set; }
     }
 }

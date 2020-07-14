@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200714172013_LoginViewModel.cs" />
     <Compile Remove="Migrations\20200714172013_LoginViewModel.Designer.cs" />
+    <Compile Remove="Migrations\20200714195920_AddVolunteerToDb.cs" />
+    <Compile Remove="Migrations\20200714195920_AddVolunteerToDb.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
