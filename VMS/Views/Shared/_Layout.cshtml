@@ -15,14 +15,28 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Volunteer Management System</a>
+                @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Don't Know if I like this idea</a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            @*taken directly from https://getbootstrap.com/docs/4.0/components/navbar/ - find the dropdown in the code and copy.*@
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Drop Down if you all want to use it.
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">No clue maybe Volunteer</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Justin couldn't think of anything else</a>
+                            </div>
+                        </li>
                     </ul>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
                 </div>
             </div>
         </nav>
@@ -35,7 +49,7 @@
 
     <footer class="border-top footer text-white bg-primary">
         <div class="container">
-            &copy; 2020 - 404 Solutions - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - 404 Solutions 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
