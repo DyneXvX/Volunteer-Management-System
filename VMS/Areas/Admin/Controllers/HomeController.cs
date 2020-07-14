@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using VMS.Models.ViewModels;
@@ -37,18 +38,18 @@ namespace VMS.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Index(LoginViewModel login)
         {
-            var userName = login.User;
+            var userName = login.UserName;
             var password = login.Password;
             
             if (( userName == "admin") && (password ==  "password"))
             {
                 return View("Admin");
             }
-            else
-            {
-                
-                return View();
-            }
+
+            ViewBag.Message = "error";
+            return View();
+
+
         }
 
 
