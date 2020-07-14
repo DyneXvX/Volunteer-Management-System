@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMS", "VMS\VMS.csproj", "{61989D37-C4CC-48EC-86B6-FE3259FC2564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VMS", "VMS\VMS.csproj", "{61989D37-C4CC-48EC-86B6-FE3259FC2564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMS.DataAccess", "VMS.DataAccess\VMS.DataAccess.csproj", "{9E03F6EE-0F34-48C0-8EE7-CEA5FE0CD02C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VMS.DataAccess", "VMS.DataAccess\VMS.DataAccess.csproj", "{9E03F6EE-0F34-48C0-8EE7-CEA5FE0CD02C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMS.Models", "VMS.Models\VMS.Models.csproj", "{13832B8A-0C2A-4001-B579-263E89B6FAF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VMS.Models", "VMS.Models\VMS.Models.csproj", "{13832B8A-0C2A-4001-B579-263E89B6FAF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMS.Utility", "VMS.Utility\VMS.Utility.csproj", "{E2B5AB5F-E66C-4CF8-9594-2B329A197A59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VMS.Utility", "VMS.Utility\VMS.Utility.csproj", "{E2B5AB5F-E66C-4CF8-9594-2B329A197A59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
