@@ -12,6 +12,8 @@ using VMS.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VMS.DataAccess.Repository.IRepository;
+using VMS.DataAccess.Repository;
 
 namespace VMS
 {
@@ -32,6 +34,7 @@ namespace VMS
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>(); //added as a part of dependence injection.
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }

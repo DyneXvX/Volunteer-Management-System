@@ -15,10 +15,10 @@ namespace VMS.DataAccess.Repository
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
 
-        public Repository(ApplicationDbContext db, DbSet<T> dbSet)
+        public Repository(ApplicationDbContext db)
         {
             _db = db;
-            this.dbSet = db.Set<T>();
+            this.dbSet = _db.Set<T>();
         }
 
         public T Get(int id)
