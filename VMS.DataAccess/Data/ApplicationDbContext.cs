@@ -15,5 +15,6 @@ namespace VMS.Data
         }
 
         public DbSet<Volunteer> Volunteers { get; set; }
+
     }
 }

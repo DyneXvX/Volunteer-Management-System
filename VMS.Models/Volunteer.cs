@@ -28,14 +28,17 @@ namespace VMS.Models
         [PasswordPropertyText]
         [MaxLength(25)]
         public string Password { get; set; }
-        public string VolunteerPrefers { get; set; }
+
+        public string VolunteerPrefersCenter { get; set; }
         public string Skills { get; set; }
-        public string Times { get; set; }
+        public string Availability { get; set; }
 
         [Required]
         public string Address { get; set; }
         public string HomePhone { get; set; }
         public string WorkPhone { get; set; }
+
+        [Required]
         public string CellPhone { get; set; }
 
         [EmailAddress]
@@ -46,13 +49,16 @@ namespace VMS.Models
         [Required]
         public string EmergencyContactName { get; set; }
         public string EmergencyContactHomePhone { get; set; }
+
+        [Required]
         public string EmergencyContactCellPhone{ get; set; }
         
         [EmailAddress]
         public string EmergencyContactEmail { get; set; }
-        public bool VolunteerDriversLicense { get; set; }
-        public bool VolunteerSsCard { get; set; }
-        public bool ApprovalStatus { get; set; }
+        public bool IsDriversLicenseOnFile { get; set; }
+        public bool IsSsCardOnFile { get; set; }
+        public bool IsActive { get; set; }
+        public string ApprovalStatus { get; set; }
         
         
 

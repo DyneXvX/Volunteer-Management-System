@@ -24,6 +24,28 @@ namespace VMS.DataAccess.Repository
             if (objFromDb != null)
             {
                 objFromDb.FirstName = volunteer.FirstName;
+                objFromDb.LastName = volunteer.LastName;
+                objFromDb.UserName = volunteer.UserName;
+                objFromDb.Password = volunteer.Password;
+                objFromDb.VolunteerPrefersCenter = volunteer.VolunteerPrefersCenter;
+                objFromDb.Skills = volunteer.Skills;
+                objFromDb.Availability = volunteer.Availability;
+                objFromDb.Address = volunteer.Address;
+                objFromDb.HomePhone = volunteer.HomePhone;
+                objFromDb.WorkPhone = volunteer.WorkPhone;
+                objFromDb.CellPhone = volunteer.CellPhone;
+                objFromDb.Email = volunteer.Email;
+                objFromDb.Education = volunteer.Education;
+                objFromDb.License = volunteer.License;
+                objFromDb.EmergencyContactName = volunteer.EmergencyContactName;
+                objFromDb.EmergencyContactHomePhone = volunteer.EmergencyContactHomePhone;
+                objFromDb.EmergencyContactCellPhone = volunteer.EmergencyContactCellPhone;
+                objFromDb.EmergencyContactEmail = volunteer.EmergencyContactEmail;
+                objFromDb.IsDriversLicenseOnFile = volunteer.IsDriversLicenseOnFile;
+                objFromDb.IsSsCardOnFile = volunteer.IsSsCardOnFile;
+                objFromDb.IsActive = volunteer.IsActive;
+                objFromDb.ApprovalStatus = volunteer.ApprovalStatus;
+
                 _db.SaveChanges();
             }
         }
