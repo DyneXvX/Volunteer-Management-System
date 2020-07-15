@@ -11,6 +11,10 @@
     <Compile Remove="Migrations\20200714195920_AddVolunteerToDb.Designer.cs" />
     <Compile Remove="Migrations\20200715153559_AddVolunteerToDb.cs" />
     <Compile Remove="Migrations\20200715153559_AddVolunteerToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200715160058_AddOpportunityToDb.cs" />
+    <Compile Remove="Migrations\20200715160058_AddOpportunityToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200715160231_AddOpportunityToDb.cs" />
+    <Compile Remove="Migrations\20200715160231_AddOpportunityToDb.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
