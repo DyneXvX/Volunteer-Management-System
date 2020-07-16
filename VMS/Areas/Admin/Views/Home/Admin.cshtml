@@ -2,5 +2,15 @@
     ViewData["Title"] = "Admin Interface";
 }
 
-<h1>Administration Level</h1>
-<p>Lital gets to play with this page don't touch it Justin</p>
+<br />
+<h1 class="text-primary">Administrator Page</h1>
+<br /><p>Please choose from the options below:</p>
+
+<br />
+<div class="col-3 text-left">
+    <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Volunteer" asp-action="Index"> &nbsp; Manage Volunteers</a>
+</div>
+<br />
+<div class="col-3 text-left">
+    <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Opportunity" asp-action="Index"> &nbsp; Manage Opportunities</a>
+</div>
