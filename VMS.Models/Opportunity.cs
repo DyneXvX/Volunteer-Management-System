@@ -16,7 +16,8 @@ namespace VMS.Models
         [Required]
         public DateTime DatePosted { get; set; }
 
-        public string VolunteerPrefersCenter { get; set; }
+        [Required]
+        public string CenterType { get; set; }
         
         public bool IsOpen { get; set; }
 

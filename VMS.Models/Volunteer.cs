@@ -57,7 +57,11 @@ namespace VMS.Models
         public string EmergencyContactEmail { get; set; }
         public bool IsDriversLicenseOnFile { get; set; }
         public bool IsSsCardOnFile { get; set; }
+
+        [Required]
         public bool IsActive { get; set; }
+
+        [Required]
         public string ApprovalStatus { get; set; }
         
         

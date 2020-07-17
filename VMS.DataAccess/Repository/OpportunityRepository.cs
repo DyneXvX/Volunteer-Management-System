@@ -24,7 +24,7 @@ namespace VMS.DataAccess.Repository
             {
                 objFromDb.OpportunityName = opportunity.OpportunityName;
                 objFromDb.DatePosted = opportunity.DatePosted;
-                objFromDb.VolunteerPrefersCenter = opportunity.VolunteerPrefersCenter;
+                objFromDb.CenterType = opportunity.CenterType;
                 objFromDb.IsOpen = opportunity.IsOpen;
                 objFromDb.VolunteerId = opportunity.VolunteerId;
 
