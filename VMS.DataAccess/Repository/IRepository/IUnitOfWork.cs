@@ -8,5 +8,7 @@ namespace VMS.DataAccess.Repository.IRepository
     {
         IVolunteerRepository Volunteer { get; }
         ISP_Call SP_Call { get; }
+
+        void Save();
     }
 }
