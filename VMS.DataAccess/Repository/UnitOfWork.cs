@@ -15,10 +15,14 @@ namespace VMS.DataAccess.Repository
         {
             _db = db;
             Volunteer = new VolunteerRepository(_db);
+            Opportunity = new OpportunityRepository(_db);
+            ApplicationUser = new ApplicationUserRepository(_db);
             SP_Call = new SP_Call(_db);
         }
 
-        public IVolunteerRepository Volunteer{ get; private set; }
+        public IVolunteerRepository Volunteer { get; private set; }
+        public IOpportunityRepository Opportunity { get; private set; }
+        public IApplicationUserRepository ApplicationUser { get; private set; }
         public ISP_Call SP_Call { get; private set; }
 
         public void Dispose()

@@ -15,8 +15,8 @@ namespace VMS.Data
         }
 
         public DbSet<Volunteer> Volunteers { get; set; }
-
         public DbSet<Opportunity> Opportunities{ get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
     }
 }

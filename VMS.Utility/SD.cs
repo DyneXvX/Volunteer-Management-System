@@ -4,8 +4,12 @@ using System.Text;
 
 namespace VMS.Utility
 {
-    public static class Sd
+    public static class SD
     {
+        // roles available
+        public const string Role_User_Indi = "Individual User";
+        public const string Role_Admin = "Admin";
+
         // values for the Volunteer ApprovalStatus property 
         public const string Status_Approved = "Approved";
         public const string Status_Pending = "Pending Approval";

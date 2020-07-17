@@ -16,7 +16,7 @@ function loadDataTable() {
             { "data": "approvalStatus", "width": "10%" },
             {
                 "data": "isActive",
-                "render": function (data) {     // add a checkbox
+                "render": function (data) {    // show a check mark or x
                     if (data) {
                         return `<i class="fas fa-check"></i>`
                     }
