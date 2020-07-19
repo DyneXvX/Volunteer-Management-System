@@ -32,7 +32,7 @@ namespace VMS.DataAccess.Initializer
                     _db.Database.Migrate();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -50,7 +50,7 @@ namespace VMS.DataAccess.Initializer
                 Name = "404 Solutions"
             }, "Admin123*").GetAwaiter().GetResult();
 
-            ApplicationUser user = _db.ApplicationUsers.Where(u => u.Email == "admin@gmail.com").FirstOrDefault();
+            ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@gmail.com");
 
             _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
         }
