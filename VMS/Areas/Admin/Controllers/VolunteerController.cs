@@ -26,25 +26,8 @@ namespace VMS.Areas.Admin.Controllers
         }
 
         //  Merv & Camille
-        /*
-        public IActionResult Upsert(int? id)
-        {
-            Volunteer volunteer = new Volunteer();
+        // Upsert 
 
-            if (id == null)         // Create (Insert)
-            {
-                return View(volunteer);
-            }
-
-            volunteer = _unitOfWork.Volunteer.Get(id.GetValueOrDefault());       // Edit (Update)
-
-            if (volunteer == null)
-            {
-                return NotFound();
-            }
-            return View(volunteer);
-        }
-        */
 
         #region API CALLS
 
