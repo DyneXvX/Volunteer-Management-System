@@ -13,7 +13,7 @@ function loadDataTable() {
         "columns": [
             { "data": "opportunityName", "width": "15%" },
             { "data": "centerType", "width": "10%" },
-            { "data": "datePosted", "width": "10%" },
+            { "data": "datePosted", "width": "15%" },
             {
                 "data": "isOpen",
                 "render": function (data) {    // show a check mark or x
@@ -25,6 +25,18 @@ function loadDataTable() {
                     }
                 },
                 "width": "7%"
+            },
+            {
+                "data": "id",
+                "render": function (data) {
+                    return `
+                            <div class="text-center">
+                                <a onclick=Delete("/Admin/Volunteer/Delete/${data}") class="btn btn-sm btn-info text-white" style="cursor:pointer">
+                                    View Volunteer Matches
+                                </a>
+                            </div>
+                           `;
+                }, "width": "13%"
             },
             {
                 "data": "id",

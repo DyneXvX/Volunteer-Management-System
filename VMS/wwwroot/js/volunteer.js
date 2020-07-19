@@ -24,7 +24,7 @@ function loadDataTable() {
                         return `<i class="fas fa-times text-center"></i>`
                     }
                 },
-                "width": "10%"
+                "width": "5%"
             },
             { "data": "availability", "width": "10%" },
             {
@@ -37,7 +37,7 @@ function loadDataTable() {
                         return `<i class="fas fa-times text-center"></i>`
                     }
                 },
-                "width": "10%"
+                "width": "5%"
             },
             {
                 "data": "isSsCardOnFile",
@@ -49,7 +49,19 @@ function loadDataTable() {
                         return `<i class="fas fa-times text-center"></i>`
                     }
                 },
-                "width": "10%"
+                "width": "5%"
+            },
+            {
+                "data": "id",
+                "render": function (data) {
+                    return `
+                            <div class="text-center">
+                                <a onclick=Delete("/Admin/Volunteer/Delete/${data}") class="btn btn-sm btn-info text-white" style="cursor:pointer">
+                                    View Opportunity Matches
+                                </a>
+                            </div>
+                           `;
+                }, "width": "15%"
             },
             {
                 "data": "id",
@@ -66,7 +78,7 @@ function loadDataTable() {
                            `;
                 }, "width": "10%"
             }
-        ]
+        ],
     });
 }
 

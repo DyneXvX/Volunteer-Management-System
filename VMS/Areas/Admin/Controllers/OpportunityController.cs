@@ -26,25 +26,7 @@ namespace VMS.Areas.Admin.Controllers
         }
 
         //  Merv & Camille
-        /*
-        public IActionResult Upsert(int? id)
-        {
-            Opportunity opportunity = new Opportunity();
-
-            if (id == null)         // Create (Insert)
-            {
-                return View(opportunity);
-            }
-
-            opportunity = _unitOfWork.Opportunity.Get(id.GetValueOrDefault());       // Edit (Update)
-
-            if (opportunity == null)
-            {
-                return NotFound();
-            }
-            return View(opportunity);
-        }
-        */
+        // Upsert 
 
         #region API CALLS
 
