@@ -21,9 +21,8 @@ namespace VMS.Models
         
         public bool IsOpen { get; set; }
 
-        
         public int VolunteerId{ get; set; }
-        [ForeignKey("VolunteerId")] public Volunteer Volunteer { get; set; }
+        
 
     }
 }

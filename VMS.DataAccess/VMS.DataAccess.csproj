@@ -15,6 +15,8 @@
     <Compile Remove="Migrations\20200715160058_AddOpportunityToDb.Designer.cs" />
     <Compile Remove="Migrations\20200715160231_AddOpportunityToDb.cs" />
     <Compile Remove="Migrations\20200715160231_AddOpportunityToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200719134237_EditAgain.cs" />
+    <Compile Remove="Migrations\20200719134237_EditAgain.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
