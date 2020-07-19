@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<br />
+<h1 class="text-primary">Manage Opportunities</h1>
+<br />
+<div class="col-5 text-left">
+    <a class="btn btn-primary btn-block" asp-area="Admin" asp-controller="Opportunity" asp-action="Index"> &nbsp; View Volunteer Opportunity Matches</a>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">Opportunity List</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a class="btn btn-primary" asp-action="Upsert"><i class="fas fa-plus"></i> &nbsp; Add New Opportunity</a>
+    </div>
+</div>
+<br />
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Change Opportunity Filter
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Most Recent (60 days)</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">By Center Type</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">All</a>
+    </div>
+</div>
+
+<div class="p-4 border rounded">
+    <table id="tblData" class="table table-striped table-bordered" style="width:100%">
+        <thead class="thead-dark">
+            <tr class="table-info">
+                <th>Opportunity</th>
+                <th>Center Type</th>
+                <th>Date Posted</th>
+                <th>Open</th>
+                <th></th>           @*extra header for the Edit and Delete buttons*@
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/opportunity.js"></script>
+}
