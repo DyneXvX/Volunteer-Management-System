@@ -8,14 +8,14 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/Admin/Volunteer/GetAll"
+            "url": "/Admin/Opportunity/GetAll"
         },
         "columns": [
-            { "data": "firstName", "width": "10%" },
-            { "data": "lastName", "width": "10%" },
-            { "data": "approvalStatus", "width": "10%" },
+            { "data": "opportunityName", "width": "15%" },
+            { "data": "centerType", "width": "10%" },
+            { "data": "datePosted", "width": "10%" },
             {
-                "data": "isActive",
+                "data": "isOpen",
                 "render": function (data) {    // show a check mark or x
                     if (data) {
                         return `<i class="fas fa-check text-center"></i>`
@@ -24,42 +24,17 @@ function loadDataTable() {
                         return `<i class="fas fa-times text-center"></i>`
                     }
                 },
-                "width": "10%"
-            },
-            { "data": "availability", "width": "10%" },
-            {
-                "data": "isDriversLicenseOnFile",
-                "render": function (data) {    // show a check mark or x
-                    if (data) {
-                        return `<i class="fas fa-check text-center"></i>`
-                    }
-                    else {
-                        return `<i class="fas fa-times text-center"></i>`
-                    }
-                },
-                "width": "10%"
-            },
-            {
-                "data": "isSsCardOnFile",
-                "render": function (data) {    // show a check mark or x
-                    if (data) {
-                        return `<i class="fas fa-check text-center"></i>`
-                    }
-                    else {
-                        return `<i class="fas fa-times text-center"></i>`
-                    }
-                },
-                "width": "10%"
+                "width": "7%"
             },
             {
                 "data": "id",
                 "render": function (data) {
                     return `
                             <div class="text-center">
-                                <a href="/Admin/Volunteer/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
+                                <a href="/Admin/Opportunity/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer">
                                     <i class="fas fa-edit"></i> 
                                 </a>
-                                <a onclick=Delete("/Admin/Volunteer/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
+                                <a onclick=Delete("/Admin/Opportunity/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
                                     <i class="fas fa-trash-alt"></i> 
                                 </a>
                             </div>

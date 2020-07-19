@@ -22,7 +22,5 @@ namespace VMS.Models
         public bool IsOpen { get; set; }
 
         public int VolunteerId{ get; set; }
-        
-
     }
 }
