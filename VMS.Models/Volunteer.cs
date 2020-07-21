@@ -63,8 +63,5 @@ namespace VMS.Models
 
         [Required]
         public string ApprovalStatus { get; set; }
-        
-        
-
     }
 }
