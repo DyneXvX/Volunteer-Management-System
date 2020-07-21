@@ -1,7 +1,291 @@
-﻿
+﻿@model VMS.Models.Volunteer
+
 @{
-    ViewData["Title"] = "Upsert";
+    //ViewData["Title"] = "Upsert";
+    var title = "Create Volunteer";
 }
 
-<h1>Upsert</h1>
+<form method="post">
+    <div class="">
+        <div asp-validation-summary="ModelOnly" class="test-danger"></div>
+        @if (Model.Id != 0)
+        {
+            //edit
+            title = "Edit Volunteer";
+
+        }
+
+        <div class="">
+            <h2 class="text-primary">@title</h2>
+        </div>
+        <!---------------------------------------------->
+        <div class="">
+            <div class="">
+                <div class="">
+                    <label asp-for="FirstName">First Name</label>
+                </div>
+                <div class="">
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <label asp-for="LastName">Last Name</label>
+                    </div>
+                    <div class="">
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="UserName">User Name</label>
+                </div>
+                <div class="">
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Password">Password</label>
+                </div>
+                <div class="">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="VolunteerPrefersCenter">Center Prefered by Volunteer</label>
+                </div>
+                <div class="">
+                    <input asp-for="VolunteerPrefersCenter" class="form-control" />
+                    <span asp-validation-for="VolunteerPrefersCenter"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Skills">Skills</label>
+                </div>
+                <div class="">
+                    <input asp-for="Skills" class="form-control" />
+                    <span asp-validation-for="Skills"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Availability">Availability</label>
+                </div>
+                <div class="">
+                    <input asp-for="Availability" class="form-control" />
+                    <span asp-validation-for="Availability"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Address">Address</label>
+                </div>
+                <div class="">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="HomePhone">Home Phone</label>
+                </div>
+                <div class="">
+                    <input asp-for="HomePhone" class="form-control" />
+                    <span asp-validation-for="HomePhone"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="WorkPhone">Work Phone</label>
+                </div>
+                <div class="">
+                    <input asp-for="WorkPhone" class="form-control" />
+                    <span asp-validation-for="WorkPhone"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="CellPhone">Cell Phone</label>
+                </div>
+                <div class="">
+                    <input asp-for="CellPhone" class="form-control" />
+                    <span asp-validation-for="CellPhone"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Email">Email</label>
+                </div>
+                <div class="">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="Education">Education</label>
+                </div>
+                <div class="">
+                    <input asp-for="Education" class="form-control" />
+                    <span asp-validation-for="Education"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="License">License</label>
+                </div>
+                <div class="">
+                    <input asp-for="License" class="form-control" />
+                    <span asp-validation-for="License"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="EmergencyContactName">Emergency Contact Name</label>
+                </div>
+                <div class="">
+                    <input asp-for="EmergencyContactName" class="form-control" />
+                    <span asp-validation-for="EmergencyContactName"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="EmergencyContactHomePhone">Emergency Contact Home Phone</label>
+                </div>
+                <div class="">
+                    <input asp-for="EmergencyContactHomePhone" class="form-control" />
+                    <span asp-validation-for="EmergencyContactHomePhone"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="EmergencyContactCellPhone">Emergency Contact Cell Phone</label>
+                </div>
+                <div class="">
+                    <input asp-for="EmergencyContactCellPhone" class="form-control" />
+                    <span asp-validation-for="EmergencyContactCellPhone"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="EmergencyContactEmail">Emergency Contact Email</label>
+                </div>
+                <div class="">
+                    <input asp-for="EmergencyContactEmail" class="form-control" />
+                    <span asp-validation-for="EmergencyContactEmail"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="IsDriversLicenseOnFile">Has Drivers License On File</label>
+                </div>
+                <div class="">
+                    <input asp-for="IsDriversLicenseOnFile" class="form-control" />
+                    <span asp-validation-for="IsDriversLicenseOnFile"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="IsSsCardOnFile">Has Social Security Card On File</label>
+                </div>
+                <div class="">
+                    <input asp-for="IsSsCardOnFile" class="form-control" />
+                    <span asp-validation-for="IsSsCardOnFile"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="IsActive">Active</label>
+                </div>
+                <div class="">
+                    <input asp-for="IsActive" class="form-control" />
+                    <span asp-validation-for="IsActive"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="">
+                <div class="">
+                    <label asp-for="ApprovalStatus">Approval Status</label>
+                </div>
+                <div class="">
+                    <input asp-for="ApprovalStatus" class="form-control" />
+                    <span asp-validation-for="ApprovalStatus"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+        </div>
+        <br>
+        <div class="">
+            <div class="">
+                @if (Model.Id != 0)
+                {
+                    <partial name="_EditAndBackToListButton" model="Model.Id" />
+                }
+                else
+                {
+                    <partial name="_CreateAndBackToListButton" />
+                }
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section scripts 
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
 
