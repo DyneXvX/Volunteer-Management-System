@@ -26,8 +26,62 @@ namespace VMS.Areas.Admin.Controllers
         }
 
         //  Merv & Camille
-        // Upsert 
+        // Upsert -----------------------------------------------------
 
+        public IActionResult Upsert(int? id)
+        {
+            Volunteer volunteer = new Volunteer();
+            if (id == null) 
+            {
+                //this is for create
+                //if empty return to the view an empty category
+                return View(volunteer);
+            }
+
+            /*this is for edit
+
+            returns default value of the data type of a collection if a 
+            collection is empty or doesn't find any element that satisfies
+            the condition
+            */
+
+            volunteer = _unitOfWork.Volunteer.Get(id.GetValueOrDefault());
+            return View();
+
+            //taking care of null/if id is incorrect
+            if (volunteer == null) 
+            {
+                return NotFound();
+            }
+            //else
+            return View(volunteer);
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Upsert(Volunteer volunteer)
+        {
+            if (ModelState.IsValid) //checks all the validations in the model to see if its true. Extra security
+            {
+
+                if (volunteer.Id == 0)
+                {
+                    _unitOfWork.Volunteer.Add(volunteer);
+                }
+                else 
+                {
+                    _unitOfWork.Volunteer.Update(volunteer);
+                }
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            // else return back to volunteer page
+            return View(volunteer);
+        }
+        //----------------------------------------------------------------------
 
         #region API CALLS
 
