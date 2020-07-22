@@ -92,6 +92,19 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
 
+        // Experimenting -Lital
+        //public IActionResult GetInactive()
+        //{
+        //    var allObj = _unitOfWork.Volunteer.GetAll();
+        //    Func<Volunteer, bool> inactive = v => !v.IsActive;
+        //    allObj = allObj.Where(inactive);
+
+        //    return Json(new { data = allObj });
+        //}
+
+
+        // Func < Volunteer, bool > isApprovedOrPending = v => v.approvalStatus.Equals(SD.Status_Approved) || v.approvalStatus.Equals(SD.Status_Pending);
+
         [HttpDelete]
         public IActionResult Delete(int id)
         {
