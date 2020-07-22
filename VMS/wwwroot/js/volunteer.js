@@ -16,14 +16,14 @@ function loadDataTable() {
             { "data": "approvalStatus", "width": "10%" },
             {
                 "data": "isActive",
-                "render": function (data) {    // show a check mark or x
-                    if (data) {
-                        return `<i class="fas fa-check text-center"></i>`
-                    }
-                    else {
-                        return `<i class="fas fa-times text-center"></i>`
-                    }
-                },
+                //"render": function (data) {    // show a check mark or x           // if we display icons, the filter doesn't work (search for a boolean)
+                //    if (data) {
+                //        return `<i class="fas fa-check text-center"></i>`
+                //    }
+                //    else {
+                //        return `<i class="fas fa-times text-center"></i>`
+                //    }
+                //},
                 "width": "5%"
             },
             { "data": "availability", "width": "10%" },
@@ -107,3 +107,19 @@ function Delete(url) {
         }
     });
 }
+
+
+function filter(filterBy) 
+{
+    dataTable.search(filterBy).draw();
+}
+
+function filterMultiple(filterBy) {
+    dataTable.search(filterBy, true, false).draw();
+}
+
+function filterByColumn() {
+    dataTable.column(3).search('false').draw();
+}
+
+
