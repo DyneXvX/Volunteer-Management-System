@@ -92,18 +92,57 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
 
-        // Experimenting -Lital
-        //public IActionResult GetInactive()
-        //{
-        //    var allObj = _unitOfWork.Volunteer.GetAll();
-        //    Func<Volunteer, bool> inactive = v => !v.IsActive;
-        //    allObj = allObj.Where(inactive);
+        // Apply filters to Volunteer table 
+        [HttpGet]
+        public IActionResult GetFilters(string filter)
+        {
+            var allObj = _unitOfWork.Volunteer.GetAll();
 
-        //    return Json(new { data = allObj });
-        //}
+            if (allObj == null)
+            {
+                TempData["Error"] = "Error retrieving Volunteers";
+                return Json(new { success = false, message = "Error while retrieving" });
+            }
 
+            if(filter == null)
+            {
+                return Json(new { data = allObj });    // if no filters, return all
+            }
+            
+            if (filter.Equals(SD.Filter_Inactive))
+            {
+                Func<Volunteer, bool> inactive = v => !v.IsActive;
+                allObj = allObj.Where(inactive);
+                return Json(new { data = allObj });
+            }
+            else if (filter.Equals(SD.Filter_Approved))
+            {
+                Func<Volunteer, bool> approved = v => v.ApprovalStatus == SD.Status_Approved;
+                allObj = allObj.Where(approved);
+                return Json(new { data = allObj });
+            }
+            else if (filter.Equals(SD.Filter_Disapproved))
+            {
+                Func<Volunteer, bool> disapproved = v => v.ApprovalStatus == SD.Status_Disapproved;
+                allObj = allObj.Where(disapproved);
+                return Json(new { data = allObj });
+            }
+            else if (filter.Equals(SD.Filter_Pending))
+            {
+                Func<Volunteer, bool> pending = v => v.ApprovalStatus == SD.Status_Pending;
+                allObj = allObj.Where(pending);
+                return Json(new { data = allObj });
+            }
+            else if (filter.Equals(SD.Filter_Approved_Pending))
+            {
+                Func<Volunteer, bool> approvedOrPending = v => v.ApprovalStatus == SD.Status_Pending || v.ApprovalStatus == SD.Status_Approved;
+                allObj = allObj.Where(approvedOrPending);
+                return Json(new { data = allObj });
+            }
 
-        // Func < Volunteer, bool > isApprovedOrPending = v => v.approvalStatus.Equals(SD.Status_Approved) || v.approvalStatus.Equals(SD.Status_Pending);
+            return Json(new { data = allObj });    // if no filters, return all 
+        }
+
 
         [HttpDelete]
         public IActionResult Delete(int id)
