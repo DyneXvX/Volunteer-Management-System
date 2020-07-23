@@ -35,5 +35,13 @@ namespace VMS.Utility
         //"Music Tutoring Inc"
         //"Jax Mental Health"
         //"Jacksonville Humane Society"
+
+        // filters 
+        public const string Filter_Inactive = "inactive";
+        public const string Filter_Approved = "approved";
+        public const string Filter_Pending = "pending";
+        public const string Filter_Disapproved = "disapproved";
+        public const string Filter_Approved_Pending = "approved-pending";
+
     }
 }
