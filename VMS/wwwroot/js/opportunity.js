@@ -11,9 +11,17 @@ function loadDataTable() {
             "url": "/Admin/Opportunity/GetAll"
         },
         "columns": [
-            { "data": "opportunityName", "width": "15%" },
-            { "data": "centerType", "width": "10%" },
-            { "data": "datePosted", "width": "15%" },
+            { "data": "opportunityName", "width": "17%" },
+            { "data": "centerType", "width": "15%" },
+            {
+                "data": "datePosted",
+                "render": function (data) {            // format date
+                    var sqlDate = data.split("-");
+                    var jsDate = sqlDate[1] + "/" + sqlDate[2].substr(0, 2) + "/" + sqlDate[0];
+                    return jsDate;
+                },
+                "width": "10%"
+            },
             {
                 "data": "isOpen",
                 "render": function (data) {    // show a check mark or x
@@ -79,6 +87,18 @@ function Delete(url) {
                     }
                 }
             });
+        }
+    });
+}
+
+function filterOpportunities(filter) {
+
+    $.ajax({
+        type: "GET",
+        url: "/Admin/Opportunity/GetFilters?filter=" + filter,
+        success: function (data) {
+            dataTable.clear();
+            dataTable.rows.add(data.data).draw();
         }
     });
 }
