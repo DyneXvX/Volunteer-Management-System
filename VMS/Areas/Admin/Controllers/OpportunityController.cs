@@ -37,6 +37,46 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
 
+
+        // Apply filters to Opportunities table 
+        [HttpGet]
+        public IActionResult GetFilters(string filter)
+        {
+            var allObj = _unitOfWork.Opportunity.GetAll();
+
+            if (allObj == null)
+            {
+                TempData["Error"] = "Error retrieving Opportunities";
+                return Json(new { success = false, message = "Error while retrieving" });
+            }
+
+            if (filter == null)
+            {
+                return Json(new { data = allObj });    // if no filters, return all
+            }
+
+            if (filter.Equals(SD.Filter_Date))
+            {
+                DateTime today = DateTime.Now;
+                Func<Opportunity, bool> last60Days = o => o.DatePosted > today.AddDays(-60);
+                allObj = allObj.Where(last60Days);
+                return Json(new { data = allObj });
+            }
+            else if (filter.Equals(""))
+            {
+                return Json(new { data = allObj });    // if no filters, return all 
+            }
+            else  // center type
+            {
+                Func<Opportunity, bool> center = o => o.CenterType == filter;
+                allObj = allObj.Where(center);
+                return Json(new { data = allObj });
+            }
+
+            //return Json(new { data = allObj });    // if no filters, return all 
+        }
+
+
         [HttpDelete]
         public IActionResult Delete(int id)
         {

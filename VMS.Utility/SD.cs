@@ -23,16 +23,13 @@ namespace VMS.Utility
         public const string Center_Senior = "Senior Care";
         public const string Center_Youth = "Youth Development";
         public const string Center_Homeless = "Homeless Shelter";
-        public const string Center_Library = "Library";
-        public const string Center_Music = "Music";
         public const string Center_Pet = "Pet";
 
         // Possible Organization Names:
         //"Red Cross"
         //"Heartland Hospice Services"
         //"Youth Literacy Foundation"
-        //"Jacksonville Public Library"
-        //"Music Tutoring Inc"
+        //"Youth Tutoring Inc"
         //"Jax Mental Health"
         //"Jacksonville Humane Society"
 
@@ -42,6 +39,7 @@ namespace VMS.Utility
         public const string Filter_Pending = "pending";
         public const string Filter_Disapproved = "disapproved";
         public const string Filter_Approved_Pending = "approved-pending";
+        public const string Filter_Date = "date";
 
     }
 }

@@ -114,7 +114,6 @@ function filterVolunteers(filter) {
     $.ajax({
         type: "GET",
         url: "/Admin/Volunteer/GetFilters?filter=" + filter,
-        data: filter,
         success: function (data) {
             dataTable.clear();
             dataTable.rows.add(data.data).draw();
