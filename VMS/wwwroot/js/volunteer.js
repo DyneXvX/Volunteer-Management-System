@@ -56,7 +56,7 @@ function loadDataTable() {
                 "render": function (data) {
                     return `
                             <div class="text-center">
-                                <a onclick=Delete("/Admin/Volunteer/Delete/${data}") class="btn btn-sm btn-info text-white" style="cursor:pointer">
+                                <a href="#" onclick="showMatches('${data}')" class="btn btn-sm btn-info text-white" style="cursor:pointer">
                                     View Opportunity Matches
                                 </a>
                             </div>
@@ -121,4 +121,54 @@ function filterVolunteers(filter) {
     }); 
 }
 
+
+function showMatches(id) {
+
+    $.ajax({
+        type: "GET",
+        url: "/Admin/Volunteer/GetSingle?id=" + id,     // get volunteer info using the id
+        success: function (vol) {
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Opportunity/GetAll",      // get all opportunities
+                success: function (opp) {
+                    var matches = [];
+                    for (x in opp.data) {
+                        if (opp.data[x].isOpen) {     // include open opportunities only
+                            if (opp.data[x].centerType == vol.data.volunteerPrefersCenter) {    // match by center type
+                                var anObj = {"opportunityName": opp.data[x].opportunityName, "centerType": opp.data[x].centerType};
+                                matches.push(anObj);
+                            }
+                        }
+                    }
+                    var volunteerName = vol.data.firstName + " " + vol.data.lastName;
+                    var myTitle = "Opportunity Matches for: ";
+                    var myBody = "";
+                    $(document).ready(function () {
+                        $(document).ready(function () {
+                            $("#myModal").modal("show");      // show the modal, but not before the function below executes
+                        });
+                        $("#myModal").on('show.bs.modal', function () {           // do the following right before showing the modal
+                            $("#modal-title").html(myTitle + volunteerName);      // update the modal title dynamically 
+
+                            if (matches.length > 0) {                            // if opportunities found, format the output
+                                for (x in matches) {
+                                    myBody += "<p><b>Opportunity Name</b>: ";
+                                    myBody += matches[x].opportunityName + "</p>";
+                                    myBody += "<p><b>Center Type</b>: ";
+                                    myBody += matches[x].centerType + "</p></br>";
+                                }
+                            }
+                            else {
+                                myBody += "No opportunities found for " + volunteerName;
+                            }
+                            
+                            $("#modal-body").html(myBody);                        // update the modal body dynamically 
+                        });
+                    });
+                }
+            });
+        }
+    });
+}
 

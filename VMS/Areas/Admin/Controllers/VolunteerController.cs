@@ -92,6 +92,13 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
 
+        [HttpGet]
+        public IActionResult GetSingle(int id)
+        {
+            var volObj = _unitOfWork.Volunteer.Get(id);
+            return Json(new { data = volObj });
+        }
+
         // Apply filters to Volunteer table 
         [HttpGet]
         public IActionResult GetFilters(string filter)

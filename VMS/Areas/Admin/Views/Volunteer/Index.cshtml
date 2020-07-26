@@ -16,7 +16,7 @@
         <a class="btn btn-primary" asp-action="Upsert"><i class="fas fa-plus"></i> &nbsp; Add New Volunteer</a>
     </div>
 </div>
-<br/>
+<br />
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Change Volunteer Filter
@@ -51,10 +51,29 @@
                 <th></th>           @*extra header for Matches button*@
                 <th></th>           @*extra header for the Edit and Delete buttons*@
             </tr>
-    </thead>
+        </thead>
     </table>
 </div>
 
+<!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-primary" id="modal-title">Modal title</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script src="~/js/volunteer.js"></script>
