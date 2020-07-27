@@ -142,14 +142,14 @@ function showMatches(id) {
                         }
                     }
                     var volunteerName = vol.data.firstName + " " + vol.data.lastName;
-                    var myTitle = "Opportunity Matches for: ";
+                    var myTitle = "Opportunity Matches for: <b>" + volunteerName + "</b>";
                     var myBody = "";
                     $(document).ready(function () {
                         $(document).ready(function () {
                             $("#myModal").modal("show");      // show the modal, but not before the function below executes
                         });
                         $("#myModal").on('show.bs.modal', function () {           // do the following right before showing the modal
-                            $("#modal-title").html(myTitle + volunteerName);      // update the modal title dynamically 
+                            $("#modal-title").html(myTitle);      // update the modal title dynamically 
 
                             if (matches.length > 0) {                            // if opportunities found, format the output
                                 for (x in matches) {
@@ -160,7 +160,8 @@ function showMatches(id) {
                                 }
                             }
                             else {
-                                myBody += "No opportunities found for " + volunteerName;
+                                myBody += "<p class='text-danger'>No opportunities found for <b>" + volunteerName + "</b></p>";
+                                myBody += "<p class='text-danger'>Please note that only open opportunities are searched</p>";
                             }
                             
                             $("#modal-body").html(myBody);                        // update the modal body dynamically 

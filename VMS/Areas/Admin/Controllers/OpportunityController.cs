@@ -37,6 +37,13 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = allObj });
         }
 
+        [HttpGet]
+        public IActionResult GetSingle(int id)
+        {
+            var volObj = _unitOfWork.Opportunity.Get(id);
+            return Json(new { data = volObj });
+        }
+
 
         // Apply filters to Opportunities table 
         [HttpGet]
