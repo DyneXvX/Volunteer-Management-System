@@ -46,7 +46,6 @@ namespace VMS.Areas.Admin.Controllers
             */
 
             volunteer = _unitOfWork.Volunteer.Get(id.GetValueOrDefault());
-            return View();
 
             //taking care of null/if id is incorrect
             if (volunteer == null) 
