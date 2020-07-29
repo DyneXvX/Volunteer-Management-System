@@ -26,7 +26,60 @@ namespace VMS.Areas.Admin.Controllers
         }
 
         //  Merv & Camille
-        // Upsert 
+        // Upsert -----------------------------------------------------
+
+        public IActionResult Upsert(int? id)
+        {
+            Opportunity opportunity = new Opportunity();
+            if (id == null)
+            {
+                //this is for create
+                //if empty return to the view an empty category
+                return View(opportunity);
+            }
+
+            /*this is for edit
+            returns default value of the data type of a collection if a 
+            collection is empty or doesn't find any element that satisfies
+            the condition
+            */
+
+            opportunity = _unitOfWork.Opportunity.Get(id.GetValueOrDefault());
+
+            //taking care of null/if id is incorrect
+            if (opportunity == null)
+            {
+                return NotFound();
+            }
+            //else
+            return View(opportunity);
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Upsert(Opportunity opportunity)
+        {
+            if (ModelState.IsValid) //checks all the validations in the model to see if its true. Extra security
+            {
+
+                if (opportunity.Id == 0)
+                {
+                    _unitOfWork.Opportunity.Add(opportunity);
+                }
+                else
+                {
+                    _unitOfWork.Opportunity.Update(opportunity);
+                }
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            // else return back to opportunity page
+            return View(opportunity);
+        }
+        //----------------------------------------------------------------------
 
         #region API CALLS
 
@@ -44,8 +97,7 @@ namespace VMS.Areas.Admin.Controllers
             return Json(new { data = volObj });
         }
 
-
-        // Apply filters to Opportunities table 
+        // Apply filters to Opportunity table 
         [HttpGet]
         public IActionResult GetFilters(string filter)
         {
