@@ -1,7 +1,109 @@
-﻿
+@model VMS.Models.Opportunity
+
 @{
-    ViewData["Title"] = "Upsert";
+    //ViewData["Title"] = "Upsert";
+    var title = "Create Opportunity";
 }
 
-<h1>Upsert</h1>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="test-danger"></div>
+    @if (Model.Id != 0)
+    {
+        //edit
+        title = "Edit Opportunity";
+
+    }
+
+    <div class="">
+        <h2 class="text-primary">@title</h2>
+    </div>
+    <!---------------------------------------------->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="">
+                    <label asp-for="OpportunityName">Opportunity Name</label>
+                </div>
+                <div class="">
+                    <input asp-for="OpportunityName" class="form-control" />
+                    <span asp-validation-for="OpportunityName"></span>
+                </div>
+            </div>
+
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="">
+                    <div class="">
+                        <label asp-for="DatePosted">Date Posted</label>
+                    </div>
+                    <div class="">
+                        <input asp-for="DatePosted" class="form-control" />
+                        <span asp-validation-for="DatePosted"></span>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="">
+                    <label asp-for="CenterType">Center Type</label>
+                </div>
+                <div class="">
+                    <input asp-for="CenterType" class="form-control" />
+                    <span asp-validation-for="CenterType"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="">
+                    <label asp-for="VolunteerId">Volunteer Id</label>
+                </div>
+                <div class="">
+                    <input asp-for="VolunteerId" class="form-control" />
+                    <span asp-validation-for="VolunteerId"></span>
+                </div>
+            </div>
+            <!---------------------------------------------->
+            <!---------------------------------------------->
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="">
+                        <label asp-for="IsOpen">Open</label>
+                    </div>
+                    <div class="">
+                        <input asp-for="IsOpen" class="form-control" />
+                        <span asp-validation-for="IsOpen"></span>
+                    </div>
+                </div>
+            </div>
+        <!---------------------------------------------->
+    </div>
+
+    <div class="row">
+
+        @if (Model.Id != 0)
+        {
+            <partial name="_EditAndBackToListButton" model="Model.Id" />
+        }
+        else
+        {
+            <partial name="_CreateAndBackToListButton" />
+        }
+    </div>
+    <!---------------------------------------------->
+
+
+
+</form>
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
 
