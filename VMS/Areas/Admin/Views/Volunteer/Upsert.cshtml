@@ -1,4 +1,5 @@
 ﻿@model VMS.Models.Volunteer
+@using VMS.Utility
 
 @{
     //ViewData["Title"] = "Upsert";
@@ -63,27 +64,27 @@
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <div class="col-3">
                             <label asp-for="VolunteerPrefersCenter">Prefered Center</label>
                         </div>
                         <div class="col-5">
-
+                            <label>Select a Volunteer Center:</label>
                             <select asp-for="VolunteerPrefersCenter" class="form-control">
-                              <!--  <span asp-validation-for="VolunteerPrefersCenter" class="text-danger"></span> -->
-                                <option value="Medical Emergency">Medical Emergency</option>
-                                <option value="Medical">Medical</option>
-                                <option value="Mental Health">Mental Health</option>
-                                <option value="Hospice">Hospice</option>
-                                <option value="Senior Care">Senior Care</option>
-                                <option value="Youth Development">Youth Development</option>
-                                <option value="Homeless Shelter">Homeless Shelter</option>
-                                <option value="Pet">Pet</option>
+                                <!--  <span asp-validation-for="VolunteerPrefersCenter" class="text-danger"></span> -->
+                                <option value="@SD.Center_Emergency">Medical Emergency</option>
+                                <option value="@SD.Center_Medical">Medical</option>
+                                <option value="@SD.Center_Mental">Mental Health</option>
+                                <option value="@SD.Center_Hospice">Hospice</option>
+                                <option value="@SD.Center_Senior ">Senior Care</option>
+                                <option value="@SD.Center_Youth ">Youth Development</option>
+                                <option value="@SD.Center_Homeless ">Homeless Shelter</option>
+                                <option value="@SD.Center_Pet">Pet</option>
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <div class="col-3">
                             <label asp-for="Skills">Skills</label>
@@ -209,24 +210,22 @@
                             <input asp-for="EmergencyContactEmail" class="form-control" />
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <div class="col-3">
                             <label asp-for="ApprovalStatus">Approval Status</label>
                         </div>
                         <div class="col-5">
-
+                            <label>Select Approval Status:</label>
                             <select asp-for="ApprovalStatus" class="form-control">
-                              <!--  <span asp-validation-for="ApprovalStatus" class="text-danger"></span>-->
-                                <option value="Approved">Approved</option>
-                                <option value="Pending Approval">Pending Approval</option>
-                                <option value="Disapproved">Disapproved</option>
-
+                                <!--  <span asp-validation-for="ApprovalStatus" class="text-danger"></span>-->
+                                <option value="@SD.Status_Approved">Approved</option>
+                                <option value="@SD.Status_Pending">Pending Approval</option>
+                                <option value="@SD.Status_Disapproved">Disapproved</option>
                             </select>
-
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <br />

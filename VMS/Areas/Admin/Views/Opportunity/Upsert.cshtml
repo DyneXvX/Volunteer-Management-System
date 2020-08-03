@@ -1,78 +1,92 @@
 @model VMS.Models.Opportunity
+@using VMS.Utility
 
 @{
     //ViewData["Title"] = "Upsert";
     var title = "Create Opportunity";
 }
 
-    <br />
-    <form method="post">
-        <div class="row p-3 border">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @if (Model.Id != 0)
-            {
-                //edit
-                title = "Edit Opportunity";
-            }
-            
-            <div class="col-12 border-bottom">
-                <h2 class="text-primary">@title</h2>
-            </div>
-            <div class="col-8 pt-4">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="OpportunityName">Opportunity Name</label>
-                    </div>
-                    <div class="col-6">
-                        <input asp-for="OpportunityName" class="form-control" />
-                        <span asp-validation-for="OpportunityName" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="DatePosted">Date Posted</label>
-                    </div>
-                    <div class="col-6">
-                        <input type="date" asp-for="DatePosted" class="form-control" value="yyyy-mm-dd" min="2000-01-01" />
-                        <span asp-validation-for="DatePosted" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="CenterType">Center Type</label>
-                    </div>
-                    <div class="col-6">
-                        <input asp-for="CenterType" class="form-control" />
-                        <span asp-validation-for="CenterType" class="text-danger"></span>
-                    </div>
-                </div>
-   
-                <input type="hidden" asp-for="VolunteerId" class="form-control" />
-                <span asp-validation-for="VolunteerId" class="text-danger"></span>
+<br />
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @if (Model.Id != 0)
+        {
+            //edit
+            title = "Edit Opportunity";
+        }
 
-                <div class="form-group row">
-                    <div class="col-3">
-                        <label asp-for="IsOpen">Open Opportunity</label>
-                    </div>
-                    <div class="col-3">
-                        <input type="checkbox" asp-for="IsOpen" class="form-control" />
-                    </div>
+        <div class="col-12 border-bottom">
+            <h2 class="text-primary">@title</h2>
+        </div>
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OpportunityName">Opportunity Name</label>
                 </div>
-                <div class="form-group row">
-                    <div class="col-8 offset-4">
-                        @if (Model.Id != 0)
-                        {
-                            <partial name="_EditAndBackToListButton" model="Model.Id" />
-                        }
-                        else
-                        {
-                            <partial name="_CreateAndBackToListButton" />
-                        }
-                    </div>
+                <div class="col-6">
+                    <input asp-for="OpportunityName" class="form-control" />
+                    <span asp-validation-for="OpportunityName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DatePosted">Date Posted</label>
+                </div>
+                <div class="col-6">
+                    <input type="date" asp-for="DatePosted" class="form-control" value="yyyy-mm-dd" min="2000-01-01" />
+                    <span asp-validation-for="DatePosted" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="CenterType">Center Type</label>
+                </div>
+                <div class="col-6">
+                                    <!---
+                     <input asp-for="CenterType" class="form-control" />
+                     <span asp-validation-for="CenterType" class="text-danger"></span>
+                     -->
+                    <label>Select a Volunteer Center:</label>
+                    <select asp-for="CenterType" class="form-control">
+                        <option value="@SD.Center_Emergency">Medical Emergency</option>
+                        <option value="@SD.Center_Medical">Medical</option>
+                        <option value="@SD.Center_Mental">Mental Health</option>
+                        <option value="@SD.Center_Hospice">Hospice</option>
+                        <option value="@SD.Center_Senior ">Senior Care</option>
+                        <option value="@SD.Center_Youth ">Youth Development</option>
+                        <option value="@SD.Center_Homeless ">Homeless Shelter</option>
+                        <option value="@SD.Center_Pet">Pet</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="VolunteerId" class="form-control" />
+            <span asp-validation-for="VolunteerId" class="text-danger"></span>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="IsOpen">Open Opportunity</label>
+                </div>
+                <div class="col-3">
+                    <input type="checkbox" asp-for="IsOpen" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    @if (Model.Id != 0)
+                    {
+                        <partial name="_EditAndBackToListButton" model="Model.Id" />
+                    }
+                    else
+                    {
+                        <partial name="_CreateAndBackToListButton" />
+                    }
                 </div>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 
 @section scripts
 {
