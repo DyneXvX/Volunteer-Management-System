@@ -43,12 +43,8 @@
                     <label asp-for="CenterType">Center Type</label>
                 </div>
                 <div class="col-6">
-                                    <!---
-                     <input asp-for="CenterType" class="form-control" />
-                     <span asp-validation-for="CenterType" class="text-danger"></span>
-                     -->
-                    <label>Select a Volunteer Center:</label>
                     <select asp-for="CenterType" class="form-control">
+                        <option value="" disabled selected>Select a Center</option>
                         <option value="@SD.Center_Emergency">Medical Emergency</option>
                         <option value="@SD.Center_Medical">Medical</option>
                         <option value="@SD.Center_Mental">Mental Health</option>
@@ -58,6 +54,7 @@
                         <option value="@SD.Center_Homeless ">Homeless Shelter</option>
                         <option value="@SD.Center_Pet">Pet</option>
                     </select>
+                    <span asp-validation-for="CenterType" class="text-danger"></span>
                 </div>
             </div>
 
