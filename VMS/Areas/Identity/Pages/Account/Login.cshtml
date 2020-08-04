@@ -2,16 +2,15 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Login";
 }
 <div class="container">
     <div class="row">
-
         <div class="col-12 col-md-4 ">
             <section>
                 <form id="account" method="post">
                     <h1>@ViewData["Title"]</h1>
-                    <br />
+                    <h4>Login below</h4>
                     <hr />
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
