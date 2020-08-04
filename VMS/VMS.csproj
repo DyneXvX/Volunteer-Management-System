@@ -28,8 +28,4 @@
     <ProjectReference Include="..\VMS.Utility\VMS.Utility.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
 </Project>
