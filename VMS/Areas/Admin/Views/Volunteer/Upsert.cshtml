@@ -55,94 +55,96 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="Password">Password</label>
+                    @if (Model.Id == 0)
+                    {
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="Password">Password</label>
+                            </div>
+                            <div class="col-5">
+                                <input type="password" asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input type="password" asp-for="Password" class="form-control" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
+                    }
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="VolunteerPrefersCenter">Prefered Center</label>
+                            </div>
+                            <div class="col-5">
+                                <label>Select a Volunteer Center:</label>
+                                <select asp-for="VolunteerPrefersCenter" class="form-control">
+                                    <!--  <span asp-validation-for="VolunteerPrefersCenter" class="text-danger"></span> -->
+                                    <option value="@SD.Center_Emergency">Medical Emergency</option>
+                                    <option value="@SD.Center_Medical">Medical</option>
+                                    <option value="@SD.Center_Mental">Mental Health</option>
+                                    <option value="@SD.Center_Hospice">Hospice</option>
+                                    <option value="@SD.Center_Senior ">Senior Care</option>
+                                    <option value="@SD.Center_Youth ">Youth Development</option>
+                                    <option value="@SD.Center_Homeless ">Homeless Shelter</option>
+                                    <option value="@SD.Center_Pet">Pet</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="VolunteerPrefersCenter">Prefered Center</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="Skills">Skills</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="Skills" class="form-control" />
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <label>Select a Volunteer Center:</label>
-                            <select asp-for="VolunteerPrefersCenter" class="form-control">
-                                <!--  <span asp-validation-for="VolunteerPrefersCenter" class="text-danger"></span> -->
-                                <option value="@SD.Center_Emergency">Medical Emergency</option>
-                                <option value="@SD.Center_Medical">Medical</option>
-                                <option value="@SD.Center_Mental">Mental Health</option>
-                                <option value="@SD.Center_Hospice">Hospice</option>
-                                <option value="@SD.Center_Senior ">Senior Care</option>
-                                <option value="@SD.Center_Youth ">Youth Development</option>
-                                <option value="@SD.Center_Homeless ">Homeless Shelter</option>
-                                <option value="@SD.Center_Pet">Pet</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="Skills">Skills</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="Availability">Availability</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="Availability" class="form-control" />
+                                <span asp-validation-for="Availability" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input asp-for="Skills" class="form-control" />
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="Availability">Availability</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="Address">Address</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input asp-for="Availability" class="form-control" />
-                            <span asp-validation-for="Availability" class="text-danger"></span>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="Address">Address</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="HomePhone">Home Phone</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="HomePhone" class="form-control" />
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input asp-for="Address" class="form-control" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="HomePhone">Home Phone</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="WorkPhone">Work Phone</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="WorkPhone" class="form-control" />
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input asp-for="HomePhone" class="form-control" />
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="WorkPhone">Work Phone</label>
+                        <div class="form-group row">
+                            <div class="col-3">
+                                <label asp-for="CellPhone">Cell Phone</label>
+                            </div>
+                            <div class="col-5">
+                                <input asp-for="CellPhone" class="form-control" />
+                                <span asp-validation-for="CellPhone" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <input asp-for="WorkPhone" class="form-control" />
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <div class="col-3">
-                            <label asp-for="CellPhone">Cell Phone</label>
-                        </div>
-                        <div class="col-5">
-                            <input asp-for="CellPhone" class="form-control" />
-                            <span asp-validation-for="CellPhone" class="text-danger"></span>
-                        </div>
                     </div>
-
-                </div>
                 <div class="col-lg-6 pt-4">
 
                     <div class="form-group row">
