@@ -2,18 +2,23 @@
     ViewData["Title"] = "Admin Interface";
     Layout = "_Layout";
 }
-
-<br />
 <h1 class="text-primary">Administrator Page</h1>
-<br /><p>Please choose from the options below:</p>
+<p>Please choose from the options below:</p>
 
-<br />
-<div class="col-3 text-left">
-    <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Opportunity" asp-action="Index"> &nbsp; Manage Opportunities</a>
+<div class="container">
+    <div class="row p-2">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+            <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Opportunity" asp-action="Index"> &nbsp; Manage Opportunities</a>
+        </div>
+    </div>
+    <div class="row p-2">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+            <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Volunteer" asp-action="Index"> &nbsp; Manage Volunteers</a>
+        </div>
+    </div>
 </div>
-<br />
-<div class="col-3 text-left">
-    <a class="btn btn-primary btn-lg btn-block" asp-area="Admin" asp-controller="Volunteer" asp-action="Index"> &nbsp; Manage Volunteers</a>
+<div class="container p-4 shadow-lg">
+    <img src="~/images/beach.jpg" alt="beach clean up" style="width:100%"/>
 </div>
 
 
