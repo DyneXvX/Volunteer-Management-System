@@ -8,7 +8,7 @@
 This web application comes with a built in initializer for you home database. 
 There will not be a release, so if you were given access to download, contribute, 
 and so on you will need to change your home connection string to whatever your home db is. 
-Keep in mind due to the virus each of ran a local db.
+Keep in mind due to the virus each of us ran a local db.
 Once you setup your connection string, just run the program(F5) and your database will be 
 built for you using the admin setup below.
 
