@@ -36,26 +36,6 @@ namespace VMS.Areas.Admin.Controllers
             return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
 
-        //this is hard-coded because we do not have a shared database to build on. 
-        //Don't change this or you are not getting in - Would never do this in the real world
-        /*
-        [HttpPost]
-        public IActionResult Index(LoginViewModel login)
-        {
-            var userName = login.UserName;
-            var password = login.Password;
-            
-            if (( userName == "admin") && (password ==  "password"))
-            {
-                return View("Admin");
-            }
-
-            ViewBag.Message = "error";
-            return View();
-
-
-        }
-        */
 
     }
 }
